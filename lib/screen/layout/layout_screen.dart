@@ -186,7 +186,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
             splashFactory: InkSplash.splashFactory,
             indicatorPadding: EdgeInsets.zero,
             labelStyle: const TextStyle(
-              fontWeight: FontWeightManager.w4,
+              fontWeight: FontWeightManager.w400,
               fontFamily: FontConstants.fontFamily,
             ),
             isScrollable: true,

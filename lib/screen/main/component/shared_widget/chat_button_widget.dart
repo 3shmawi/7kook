@@ -35,7 +35,7 @@ class ChatButtonWidget extends StatelessWidget {
               fontSize: 32,
               text: AppStrings.chatText,
               textAlign: TextAlign.center,
-              fontWeight: FontWeightManager.w4,
+              fontWeight: FontWeightManager.w400,
             ),
           ),
         ),

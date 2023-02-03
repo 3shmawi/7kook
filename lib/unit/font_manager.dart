@@ -6,14 +6,17 @@ class FontConstants {
 
 class FontWeightManager {
   static const FontWeight normal = FontWeight.normal;
-  static const FontWeight w3 = FontWeight.w300;
-  static const FontWeight w4 = FontWeight.w400;
-  static const FontWeight w5 = FontWeight.w500;
-  static const FontWeight w6 = FontWeight.w600;
-  static const FontWeight w7 = FontWeight.w700;
+  static const FontWeight w300 = FontWeight.w300;
+  static const FontWeight w400 = FontWeight.w400;
+  static const FontWeight w500 = FontWeight.w500;
+  static const FontWeight w600 = FontWeight.w600;
+  static const FontWeight w700 = FontWeight.w700;
+  static const FontWeight w800 = FontWeight.w800;
+  static const FontWeight bold = FontWeight.bold;
 }
 
 class FontSize {
+  static const double s11 = 11.0;
   static const double s12 = 12.0;
   static const double s13 = 13.0;
   static const double s14 = 14.0;

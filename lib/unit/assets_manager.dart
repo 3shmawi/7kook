@@ -26,4 +26,6 @@ class AssetsManager {
   static String chatIcon = '$iconPath/chat.svg';
   static String backIcon = '$iconPath/back.svg';
   static String personIcon = '$iconPath/person.svg';
+  static String sendIcon = '$iconPath/send.svg';
+  static String attachedIcon = '$iconPath/attached.svg';
 }

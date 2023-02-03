@@ -57,7 +57,7 @@ class _MainScreenState extends State<MainScreen> {
   TextWidget _header() => const TextWidget(
         text: AppStrings.classification,
         fontSize: FontSize.s25,
-        fontWeight: FontWeightManager.w4,
+        fontWeight: FontWeightManager.w400,
       );
 
   SizedBox _space(double space) => SizedBox(height: space);

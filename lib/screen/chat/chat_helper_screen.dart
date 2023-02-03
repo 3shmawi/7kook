@@ -33,12 +33,11 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
               const ChatButtonWidget(),
               Container(
                 margin: const EdgeInsets.only(top: AppMargin.m16),
-                padding: const EdgeInsets.fromLTRB(AppPadding.p0,AppPadding.p20,AppPadding.p20,AppPadding.p20),
                 height: AppSize.s500,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: ColorManager.white,
-                  borderRadius: BorderRadius.circular(AppSize.s50),
+                  borderRadius: BorderRadius.circular(AppSize.s20),
                   border: Border.all(
                     width: AppSize.s1,
                     color: ColorManager.secondary,
@@ -54,76 +53,56 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
     );
   }
 
-  Column _body() => Column(
+  Widget _body() => Column(
         children: [
-          const SizedBox(
-            height: AppSize.s20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.only(right: 25),
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: ColorManager.grey.withOpacity(0.22),
-                    borderRadius: const BorderRadius.only(
-                      bottomRight: Radius.circular(20),
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                    ),
-                  ),
-                  child: const TextWidget(
-                    text: AppStrings.helpCenter,
-                    fontSize: FontSize.s12,
-                  ),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    _replyChatItem(),
+                    _replyChatItem(),
+                    _replyChatItem(),
+                    _replyChatItem(),
+                    _replyChatItem(),
+                    _sendChatItem(),
+                    _sendChatItem(),
+                    _replyChatItem(),
+                    _replyChatItem(),
+                    _replyChatItem(),
+                  ],
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.fromLTRB(5, 10, 1, 0),
-                height: 38,
-                width: 65,
-                decoration: BoxDecoration(
-                  color: ColorManager.primary,
-                  shape: BoxShape.circle,
-                ),
-                child: SvgPicture.asset(
-                  AssetsManager.logoIcon,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: AppSize.s15,
-          ),
-          Container(
-            height: AppSize.s40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(AppSize.s15),
-              border: Border.all(
-                width: AppSize.s1,
-                color: ColorManager.grey,
               ),
             ),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: AppPadding.p2,
-                    right: AppPadding.p10,
-                  ),
+          ),
+          const SizedBox(height: 1),
+          Row(
+            children: [
+              GestureDetector(
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
                   child: SvgPicture.asset(
-                    AssetsManager.searchIcon,
-                    color: ColorManager.primary,
+                    AssetsManager.attachedIcon,
+                    color: ColorManager.grey,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                Expanded(
+              ),
+              Expanded(
+                child: Container(
+                  height: AppSize.s40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(AppSize.s15),
+                    border: Border.all(
+                      width: AppSize.s1,
+                      color: ColorManager.grey,
+                    ),
+                  ),
                   child: TextFormField(
                     style: const TextStyle(fontSize: FontSize.s13),
                     decoration: const InputDecoration(
-                      hintText: AppStrings.searchTab,
+                      hintText: AppStrings.writeTab,
                       contentPadding: EdgeInsets.symmetric(
                         horizontal: AppPadding.p5,
                         vertical: AppPadding.p10,
@@ -133,103 +112,99 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
                     ),
                   ),
                 ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: AppSize.s20,
-          ),
-          const TextWidget(
-            text: AppStrings.subjectsTab,
-            fontSize: FontSize.s19,
-          ),
-          const SizedBox(
-            height: AppSize.s20,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              SizedBox(
-                width: double.infinity,
               ),
-              TextWidget(
-                text: AppStrings.chooseBestTab,
-                fontSize: FontSize.s13,
-              ),
-              SizedBox(
-                height: AppSize.s12,
-              ),
-              TextWidget(
-                text: AppStrings.contactWithTab,
-                fontSize: FontSize.s13,
-              ),
-              SizedBox(
-                height: AppSize.s9,
-              ),
-              TextWidget(
-                text: AppStrings.searchAboutTab,
-                fontSize: FontSize.s13,
-              ),
-              SizedBox(
-                height: AppSize.s12,
-              ),
-              TextWidget(
-                text: AppStrings.addProposalTab,
-                fontSize: FontSize.s13,
+              GestureDetector(
+                onTap: (){},
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                    color: ColorManager.primary,
+                    shape: BoxShape.circle,
+                  ),
+                  child: SvgPicture.asset(
+                    AssetsManager.sendIcon,
+                    fit: BoxFit.cover,
+                    height: 20,
+                  ),
+                ),
               ),
             ],
           ),
-          const SizedBox(
-            height: AppSize.s20,
-          ),
-          const TextWidget(
-            text: AppStrings.didFindTab,
-            fontSize: FontSize.s19,
-          ),
-          const SizedBox(
-            height: AppSize.s15,
+        ],
+      );
+
+  Row _replyChatItem() => Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.only(right: 50, bottom: 15),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: ColorManager.grey.withOpacity(0.22),
+                borderRadius: const BorderRadius.only(
+                  bottomRight: Radius.circular(20),
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+              ),
+              child: const TextWidget(
+                text: AppStrings.helpCenter,
+                fontSize: FontSize.s11,
+              ),
+            ),
           ),
           Container(
-            padding: const EdgeInsets.fromLTRB(
-              AppPadding.p11,
-              AppPadding.p10,
-              AppPadding.p12,
-              AppPadding.p0,
-            ),
+            padding: const EdgeInsets.fromLTRB(5, 10, 1, 0),
+            height: 38,
+            width: 65,
             decoration: BoxDecoration(
-              border: Border.all(
-                color: ColorManager.secondary,
+              color: ColorManager.primary,
+              shape: BoxShape.circle,
+            ),
+            child: SvgPicture.asset(
+              AssetsManager.logoIcon,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ],
+      );
+
+  Row _sendChatItem() => Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.fromLTRB(5, 10, 1, 0),
+            height: 38,
+            width: 65,
+            decoration: BoxDecoration(
+              color: ColorManager.primary,
+              shape: BoxShape.circle,
+            ),
+            child: SvgPicture.asset(
+              AssetsManager.logoIcon,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              margin: const EdgeInsets.only(left: 50, bottom: 15),
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: ColorManager.grey.withOpacity(0.22),
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(20),
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
               ),
-              borderRadius: BorderRadius.circular(AppSize.s15),
+              child: const TextWidget(
+                text: AppStrings.helpCenter,
+                fontSize: FontSize.s11,
+              ),
             ),
-            child: Column(
-              children: [
-                const TextWidget(
-                  text: AppStrings.talkWithUsTab,
-                  fontSize: FontSize.s29,
-                ),
-                SvgPicture.asset(
-                  AssetsManager.chatIcon,
-                  color: ColorManager.secondary,
-                  height: AppSize.s20,
-                ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(AppSize.s72, AppSize.s25),
-                    backgroundColor: ColorManager.primary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(AppSize.s15),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: TextWidget(
-                    text: AppStrings.startNowTab,
-                    color: ColorManager.white,
-                  ),
-                ),
-              ],
-            ),
-          )
+          ),
         ],
       );
 
