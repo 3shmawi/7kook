@@ -10,10 +10,12 @@ class ConstantColor{
 
 class SizedConstant{
   static double defaultSize=10.0;
+  static double radiusAuthSize=40.0;
 
 }
 
 class ImageConstant{
    static const  String pathImage='assets/images';
    static String logoImage='$pathImage/logo.png';
+   static String splashImage='$pathImage/splash.png';
 }
