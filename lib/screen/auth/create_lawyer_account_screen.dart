@@ -1,10 +1,8 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:hokok/screen/auth/login_screen.dart';
-import 'package:hokok/screen/auth/welcome_screen.dart';
 import 'package:hokok/unit/constant.dart';
 import 'package:hokok/widget/shared_widget.dart';
+
+import '../../unit/routes_manager.dart';
 
 class CreateLawyerAccountScreen extends StatelessWidget {
   CreateLawyerAccountScreen({Key? key}) : super(key: key);
@@ -133,7 +131,7 @@ class CreateLawyerAccountScreen extends StatelessWidget {
                       const SizedBox(height: 20,),
                       mainButton(text: 'انشاء حساب ', fct: (){
                         if(kForm.currentState!.validate()){
-                          navAndRemove(context: context,screen: const WelcomeScreen());
+                          Navigator.of(context).pushReplacementNamed(Routes.welcomeRoute);
                         }
                       }),
                       const SizedBox(height: 20,),
@@ -143,7 +141,7 @@ class CreateLawyerAccountScreen extends StatelessWidget {
                         colorOne: ConstantColor.secondaryColor,
                         colorTwo: ConstantColor.primaryColor,
                         fontSize: 15,
-                        onTap: ()=>navOff(context: context, screen:LoginScreen()),
+                        onTap: ()=>Navigator.of(context).pushReplacementNamed(Routes.loginRoute),
                       ),
                     ],
                   ),

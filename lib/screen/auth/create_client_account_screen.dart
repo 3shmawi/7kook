@@ -1,10 +1,11 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:hokok/screen/auth/login_screen.dart';
 import 'package:hokok/screen/auth/welcome_screen.dart';
 import 'package:hokok/unit/constant.dart';
 import 'package:hokok/widget/shared_widget.dart';
+
+import '../../unit/routes_manager.dart';
 
 class CreateClientAccountScreen extends StatelessWidget {
   CreateClientAccountScreen({Key? key}) : super(key: key);
@@ -58,6 +59,7 @@ class CreateClientAccountScreen extends StatelessWidget {
                             if(value!.isEmpty){
                               return 'من فضلك ادخل اسم المستخدم';
                             }
+                            return null;
                           }
                       ),
                       const SizedBox(height: 10,),
@@ -69,6 +71,7 @@ class CreateClientAccountScreen extends StatelessWidget {
                             if(value!.isEmpty){
                               return 'من فضلك ادخل البريد الالكتروني';
                             }
+                            return null;
                           }
                       ),
                       const SizedBox(height: 10,),
@@ -81,6 +84,7 @@ class CreateClientAccountScreen extends StatelessWidget {
                             if(value!.isEmpty){
                               return 'من فضلك ادخل رقم الهاتف';
                             }
+                            return null;
                           }
                       ),
                       const SizedBox(height: 10,),
@@ -92,6 +96,7 @@ class CreateClientAccountScreen extends StatelessWidget {
                             if(value!.isEmpty){
                               return 'من فضلك ادخل الموقع';
                             }
+                            return null;
                           }
                       ),
                       const SizedBox(height: 10,),
@@ -103,6 +108,7 @@ class CreateClientAccountScreen extends StatelessWidget {
                             if(value!.isEmpty){
                               return 'من فضلك ادخل كلمه السر';
                             }
+                            return null;
                           }
                       ),
                       const SizedBox(height: 10,),
@@ -129,7 +135,7 @@ class CreateClientAccountScreen extends StatelessWidget {
                         colorOne: ConstantColor.secondaryColor,
                         colorTwo: ConstantColor.primaryColor,
                         fontSize: 15,
-                        onTap: ()=>navOff(context: context, screen:LoginScreen()),
+                        onTap: ()=>Navigator.of(context).pushReplacementNamed(Routes.loginRoute),
                       ),
                     ],
                   ),

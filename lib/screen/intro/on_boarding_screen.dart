@@ -1,13 +1,20 @@
-
 import 'package:flutter/material.dart';
-import 'package:hokok/screen/auth/login_screen.dart';
 import 'package:hokok/unit/constant.dart';
+import 'package:hokok/unit/routes_manager.dart';
 import 'package:hokok/widget/shared_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnBoardingScreen extends StatelessWidget {
-   OnBoardingScreen({Key? key}) : super(key: key);
-  var controller=PageController();
+class OnBoardingScreen extends StatefulWidget {
+   const OnBoardingScreen({Key? key}) : super(key: key);
+
+  @override
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
+}
+
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  PageController? _controller;
+
+
 
   List<Widget> textSpanList=[
     RichText(
@@ -96,6 +103,12 @@ class OnBoardingScreen extends StatelessWidget {
         )),
   ];
 
+
+  @override
+  void initState() {
+    _controller = PageController();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,10 +119,10 @@ class OnBoardingScreen extends StatelessWidget {
           PageView.builder(
               onPageChanged: (index){
                 if(index==textSpanList.length-1){
-                  navOff(context: context, screen: LoginScreen());
+                  Navigator.of(context).pushReplacementNamed(Routes.loginRoute);
                 }
               },
-              controller: controller,
+              controller: _controller!,
               itemCount: textSpanList.length,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context,index){
@@ -124,7 +137,7 @@ class OnBoardingScreen extends StatelessWidget {
             children: [
               textWidget(text: 'مرر يساراً', fontSize: 16,color: ConstantColor.whiteColor),
               const SizedBox(height: 10,),
-              SmoothPageIndicator(controller: controller,
+              SmoothPageIndicator(controller: _controller!,
                 count: textSpanList.length,
                 effect: ExpandingDotsEffect(
                     activeDotColor: ConstantColor.primaryColor,
@@ -138,5 +151,12 @@ class OnBoardingScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+
+  @override
+  void dispose() {
+    _controller!.dispose();
+    super.dispose();
   }
 }

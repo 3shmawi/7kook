@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:hokok/screen/auth/chose_account_screen.dart';
 import 'package:hokok/screen/auth/welcome_screen.dart';
 import 'package:hokok/unit/constant.dart';
 import 'package:hokok/widget/shared_widget.dart';
+
+import '../../unit/routes_manager.dart';
 
 class LoginScreen extends StatelessWidget {
    LoginScreen({Key? key}) : super(key: key);
@@ -52,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: 60,),
                       mainButton(text: 'استمرار', fct: (){
                         if(kForm.currentState!.validate()){
-                          navTo(context: context,screen: OTPScreen());
+                          Navigator.of(context).pushReplacementNamed(Routes.otpRoute);
                         }
                       }),
                       const SizedBox(height: 40,),
@@ -62,7 +63,7 @@ class LoginScreen extends StatelessWidget {
                         colorOne: ConstantColor.secondaryColor,
                         colorTwo: ConstantColor.primaryColor,
                         fontSize: 15,
-                        onTap:()=> navOff(context: context, screen: const ChoseAccountScreen()),
+                        onTap:()=>Navigator.of(context).pushReplacementNamed(Routes.registerRoute),
                       ),
 
                     ],
