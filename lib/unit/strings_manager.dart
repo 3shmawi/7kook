@@ -1,6 +1,16 @@
 class AppStrings {
   static const noRouteFound = "لا يوجد مسار هنا";
+//welcome
+  static const welcome = "مرحباً";
+  static const welcomeName = "Ashmawi";
+  static const createdAccount = "تم انشاء حسابك بنجاح";
+  static const quotation = "\"";
+  static const join = "سعداء بانضمامك إلينا:)";
+  static const message = "اذا واجهتك أي مشاكل لا تتردد في محادثتنا عبر الشات المخصص للشكاوى والملاحظات داخل التطبيق";
+  static const loginNow = "تسجيل الدخول الآن";
 
+
+  //main
   static const main = "الرئيسية";
   static const findLawyer = "ابحث عن محاميين";
   static const browse = "تصفح الطلبات";
@@ -32,4 +42,30 @@ class AppStrings {
   static const writeTab = "اكتب رسالتك هنا ";
   static const helpCenter =
       "مرحبا بكم في مركز دعم \"حقوق\". نرجو منك ترك رسالتك وسوف يتم الرد عليك في أقرب وقت";
+
+  //profile
+  static const hire = "وكلنى";
+  static const contactMe = "تواصل معي";
+  static const active = "نشط منذ نصف ساعة";
+  static const name = "فيصل";
+  static const location = "الرياض - جدة -القسيم";
+  static const aboutMe = "نبذة عنى";
+  static const about = "اسمي فيصل القاسم العمر : 30 عام حاصل على ماجيستير في القانون من جامعة .... كذلك حاصل على دبلومة";
+  static const more = "عرض المزيد عن فيصل";
+  static const statistics = "احصائيات";
+  static const rating = "التقييمات";
+  static const agencies = "التوكيلات";
+  static const tasks = "معدل اكمال المهام";
+  static const rate2 = "معدل التعاملات مرة أخرى";
+  static const timing = "معدل الالتزام بالموعد";
+  static const countTask = "المهام التي يعمل عليها";
+  static const date = "تاريخ التسجيل";
+  static const badges ="أوسمة حصل عليها";
+  static const certificates ="شهاداتي";
+  static const sendToMe = "أرسل تفاصيل ماتريد الى";
+  static const details = "التصنيف";
+  static const acceptTime = "المدة المتوقعة";
+  static const budget = "الميزانية المطروحة";
+  static const priceAfter = "بعد خصم النسبة";
+  static const send = "ارسال";
 }

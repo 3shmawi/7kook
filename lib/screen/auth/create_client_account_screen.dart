@@ -1,7 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:hokok/screen/auth/welcome_screen.dart';
 import 'package:hokok/unit/constant.dart';
 import 'package:hokok/widget/shared_widget.dart';
 
@@ -125,7 +124,7 @@ class CreateClientAccountScreen extends StatelessWidget {
                       const SizedBox(height: 20,),
                       mainButton(text: 'انشاء حساب ', fct: (){
                         if(kForm.currentState!.validate()){
-                          navAndRemove(context: context,screen: const WelcomeScreen());
+                          Navigator.pushReplacementNamed(context, Routes.welcomeRoute);
                         }
                       }),
                       const SizedBox(height: 20,),

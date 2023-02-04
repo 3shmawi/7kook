@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:hokok/screen/auth/welcome_screen.dart';
 import 'package:hokok/unit/constant.dart';
 import 'package:hokok/widget/shared_widget.dart';
 
@@ -124,7 +123,7 @@ class OTPScreen extends StatelessWidget {
                       const SizedBox(height: 60,),
                       mainButton(text: 'استمرار', fct: (){
                         if(kForm.currentState!.validate()){
-                          navAndRemove(context: context, screen:const WelcomeScreen());
+                         Navigator.of(context).pushReplacementNamed(Routes.welcomeRoute);
                         }
                       }),
 
