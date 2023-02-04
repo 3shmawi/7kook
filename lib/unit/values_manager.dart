@@ -113,3 +113,10 @@ class AppIntegerNum {
   static const int i3 = 3;
   static const int i4 = 4;
 }
+
+
+class AppOpacity {
+  static const double c0_22 = 0.22;
+  static const double c0_49 = 0.49;
+  static const double c0_65 = 0.65;
+}
