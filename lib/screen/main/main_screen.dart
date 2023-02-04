@@ -9,9 +9,9 @@ import 'package:hokok/unit/color_manager.dart';
 import 'package:hokok/unit/font_manager.dart';
 import 'package:hokok/unit/routes_manager.dart';
 import 'package:hokok/unit/strings_manager.dart';
-import 'package:hokok/unit/components/shared_widget.dart';
 
 import '../../unit/constants_manager.dart';
+import '../../unit/shared_widget/text.dart';
 import '../../unit/values_manager.dart';
 
 class MainScreen extends StatefulWidget {

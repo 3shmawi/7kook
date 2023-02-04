@@ -3,10 +3,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hokok/screen/main/component/shared_widget/chat_button_widget.dart';
 import 'package:hokok/unit/assets_manager.dart';
 import 'package:hokok/unit/color_manager.dart';
-import 'package:hokok/unit/components/shared_widget.dart';
 import 'package:hokok/unit/font_manager.dart';
 import 'package:hokok/unit/strings_manager.dart';
 import 'package:hokok/unit/values_manager.dart';
+
+import '../../unit/shared_widget/text.dart';
 
 class ChatHelperScreen extends StatefulWidget {
   const ChatHelperScreen({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
                 ),
                 child: _body(),
               ),
-              _backButton(context),
+              const BackButton(),
             ],
           ),
         ),
@@ -58,7 +59,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(AppPadding.p8),
                 child: Column(
                   children: [
                     _replyChatItem(),
@@ -76,12 +77,12 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 1),
+          const SizedBox(height: AppSize.s1),
           Row(
             children: [
               GestureDetector(
                 child: Padding(
-                  padding: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.all(AppPadding.p5),
                   child: SvgPicture.asset(
                     AssetsManager.attachedIcon,
                     color: ColorManager.grey,
@@ -114,10 +115,10 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
                 ),
               ),
               GestureDetector(
-                onTap: (){},
+                onTap: () {},
                 child: Container(
-                  padding: const EdgeInsets.all(10),
-                  margin: const EdgeInsets.all(3),
+                  padding: const EdgeInsets.all(AppPadding.p10),
+                  margin: const EdgeInsets.all(AppMargin.m3),
                   decoration: BoxDecoration(
                     color: ColorManager.primary,
                     shape: BoxShape.circle,
@@ -125,7 +126,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
                   child: SvgPicture.asset(
                     AssetsManager.sendIcon,
                     fit: BoxFit.cover,
-                    height: 20,
+                    height: AppSize.s20,
                   ),
                 ),
               ),
@@ -139,14 +140,17 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
         children: [
           Expanded(
             child: Container(
-              margin: const EdgeInsets.only(right: 50, bottom: 15),
-              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(
+                right: AppMargin.m55,
+                bottom: AppMargin.m15,
+              ),
+              padding: const EdgeInsets.all(AppPadding.p10),
               decoration: BoxDecoration(
-                color: ColorManager.grey.withOpacity(0.22),
+                color: ColorManager.grey.withOpacity(AppOpacity.c0_22),
                 borderRadius: const BorderRadius.only(
-                  bottomRight: Radius.circular(20),
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(AppSize.s20),
+                  topLeft: Radius.circular(AppSize.s20),
+                  topRight: Radius.circular(AppSize.s20),
                 ),
               ),
               child: const TextWidget(
@@ -156,9 +160,14 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.fromLTRB(5, 10, 1, 0),
-            height: 38,
-            width: 65,
+            padding: const EdgeInsets.fromLTRB(
+              AppPadding.p5,
+              AppPadding.p10,
+              AppPadding.p1,
+              AppPadding.p0,
+            ),
+            height: AppSize.s38,
+            width: AppSize.s65,
             decoration: BoxDecoration(
               color: ColorManager.primary,
               shape: BoxShape.circle,
@@ -175,9 +184,14 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            padding: const EdgeInsets.fromLTRB(5, 10, 1, 0),
-            height: 38,
-            width: 65,
+            padding: const EdgeInsets.fromLTRB(
+              AppPadding.p5,
+              AppPadding.p10,
+              AppPadding.p1,
+              AppPadding.p0,
+            ),
+            height: AppSize.s38,
+            width: AppSize.s65,
             decoration: BoxDecoration(
               color: ColorManager.primary,
               shape: BoxShape.circle,
@@ -189,14 +203,17 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
           ),
           Expanded(
             child: Container(
-              margin: const EdgeInsets.only(left: 50, bottom: 15),
-              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(
+                left: AppMargin.m50,
+                bottom: AppMargin.m15,
+              ),
+              padding: const EdgeInsets.all(AppPadding.p10),
               decoration: BoxDecoration(
-                color: ColorManager.grey.withOpacity(0.22),
+                color: ColorManager.grey.withOpacity(AppOpacity.c0_22),
                 borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(AppSize.s20),
+                  topLeft: Radius.circular(AppSize.s20),
+                  topRight: Radius.circular(AppSize.s20),
                 ),
               ),
               child: const TextWidget(
@@ -206,22 +223,5 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
             ),
           ),
         ],
-      );
-
-  InkWell _backButton(context) => InkWell(
-        onTap: () => Navigator.of(context).pop(),
-        borderRadius: BorderRadius.circular(AppSize.s10),
-        child: Padding(
-          padding: const EdgeInsets.only(
-            top: AppPadding.p10,
-            right: AppPadding.p15,
-            bottom: AppPadding.p2,
-            left: AppPadding.p5,
-          ),
-          child: SvgPicture.asset(
-            AssetsManager.backIcon,
-            color: ColorManager.white.withOpacity(AppSize.s0_49),
-          ),
-        ),
       );
 }

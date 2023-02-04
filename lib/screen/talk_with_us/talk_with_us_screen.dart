@@ -3,11 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hokok/screen/main/component/shared_widget/chat_button_widget.dart';
 import 'package:hokok/unit/assets_manager.dart';
 import 'package:hokok/unit/color_manager.dart';
-import 'package:hokok/unit/components/shared_widget.dart';
 import 'package:hokok/unit/font_manager.dart';
 import 'package:hokok/unit/routes_manager.dart';
 import 'package:hokok/unit/strings_manager.dart';
 import 'package:hokok/unit/values_manager.dart';
+
+import '../../unit/shared_widget/text.dart';
 
 class TalkWithUsScreen extends StatefulWidget {
   const TalkWithUsScreen({Key? key}) : super(key: key);
@@ -47,7 +48,7 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
                 ),
                 child: _body(),
               ),
-              _backButton(context),
+              const BackButton(),
             ],
           ),
         ),
@@ -201,22 +202,5 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
             ),
           )
         ],
-      );
-
-  InkWell _backButton(context) => InkWell(
-        onTap: () => Navigator.of(context).pop(),
-        borderRadius: BorderRadius.circular(AppSize.s10),
-        child: Padding(
-          padding: const EdgeInsets.only(
-            top: AppPadding.p10,
-            right: AppPadding.p15,
-            bottom: AppPadding.p2,
-            left: AppPadding.p5,
-          ),
-          child: SvgPicture.asset(
-            AssetsManager.backIcon,
-            color: ColorManager.white.withOpacity(AppSize.s0_49),
-          ),
-        ),
       );
 }

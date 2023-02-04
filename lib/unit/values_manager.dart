@@ -1,10 +1,14 @@
 class AppMargin {
+  static const double m3 = 3.0;
   static const double m8 = 8.0;
   static const double m12 = 12.0;
   static const double m14 = 14.0;
+  static const double m15 = 15.0;
   static const double m16 = 16.0;
   static const double m18 = 18.0;
   static const double m20 = 20.0;
+  static const double m50 = 50.0;
+  static const double m55 = 55.0;
 }
 
 class AppPadding {
@@ -36,7 +40,6 @@ class AppPadding {
 
 class AppSize {
   static const double s0 = 0.0;
-  static const double s0_49 = 0.49;
   static const double s0_5 = 0.5;
   static const double s1 = 1.0;
   static const double s1_5 = 1.5;
@@ -61,11 +64,13 @@ class AppSize {
   static const double s25 = 25.0;
   static const double s35 = 35.0;
   static const double s37 = 37.0;
+  static const double s38 = 38.0;
   static const double s40 = 40.0;
   static const double s50 = 50.0;
   static const double s55 = 55.0;
   static const double s60 = 60.0;
   static const double s64 = 64.0;
+  static const double s65 = 65.0;
   static const double s70 = 70.0;
   static const double s72 = 72.0;
   static const double s90 = 90.0;
@@ -94,4 +99,11 @@ class AppIntegerNum {
   static const int i2 = 2;
   static const int i3 = 3;
   static const int i4 = 4;
+}
+
+
+class AppOpacity {
+  static const double c0_22 = 0.22;
+  static const double c0_49 = 0.49;
+
 }

@@ -4,8 +4,8 @@ import 'package:hokok/unit/strings_manager.dart';
 
 import '../../../../unit/assets_manager.dart';
 import '../../../../unit/color_manager.dart';
-import '../../../../unit/components/shared_widget.dart';
 import '../../../../unit/font_manager.dart';
+import '../../../../unit/shared_widget/text.dart';
 
 class ChatButtonWidget extends StatelessWidget {
   const ChatButtonWidget({Key? key}) : super(key: key);
