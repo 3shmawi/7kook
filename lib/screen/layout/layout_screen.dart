@@ -56,7 +56,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
                 height: AppSize.s142,
                 width: AppSize.s142,
                 fit: BoxFit.cover,
-                color: Colors.white.withOpacity(0.65),
+                color: Colors.white.withOpacity(AppOpaci),
               ),
             ),
             Positioned(
@@ -173,7 +173,6 @@ class _LayoutScreenState extends State<LayoutScreen> {
       );
 
   BlocBuilder _tabsBar() => BlocBuilder<LayoutCubit, LayoutState>(
-        buildWhen: (current, _) => current is ChangeIndexState,
         builder: (context, state) {
           var cubit = context.read<LayoutCubit>();
           return TabBar(

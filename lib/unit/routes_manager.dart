@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:hokok/screen/auth/create_client_account_screen.dart';
 import 'package:hokok/screen/auth/create_lawyer_account_screen.dart';
 import 'package:hokok/screen/auth/login_screen.dart';
-import 'package:hokok/screen/auth/welcome_screen.dart';
 import 'package:hokok/screen/intro/on_boarding_screen.dart';
 import 'package:hokok/screen/intro/splash_screen.dart';
 import 'package:hokok/screen/layout/layout_screen.dart';
+import 'package:hokok/screen/profile/profile_screen.dart';
 import 'package:hokok/screen/talk_with_us/talk_with_us_screen.dart';
 import 'package:hokok/unit/strings_manager.dart';
 
 import '../screen/auth/chose_account_screen.dart';
 import '../screen/chat/chat_helper_screen.dart';
+import '../screen/welcome/welcome_screen.dart';
 
 class Routes {
   static const String splashRoute = "/";
@@ -24,6 +25,7 @@ class Routes {
   static const String layoutRoute = "/layout";
   static const String talkWithUsRoute = '/talkWithUs';
   static const String chatRoute = '/chat';
+  static const String profileRoute = '/profile';
 }
 
 class RouteGenerator {
@@ -51,6 +53,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const TalkWithUsScreen());
       case Routes.chatRoute:
         return MaterialPageRoute(builder: (_) => const ChatHelperScreen());
+      case Routes.profileRoute:
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
 
       default:
         return unDefinedRoute();
