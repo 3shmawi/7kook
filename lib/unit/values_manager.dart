@@ -105,5 +105,5 @@ class AppIntegerNum {
 class AppOpacity {
   static const double c0_22 = 0.22;
   static const double c0_49 = 0.49;
-
+  static const double c0_65 = 0.65;
 }
