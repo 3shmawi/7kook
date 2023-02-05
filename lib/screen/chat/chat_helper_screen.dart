@@ -4,6 +4,8 @@ import 'package:hokok/screen/main/component/shared_widget/chat_button_widget.dar
 import 'package:hokok/unit/assets_manager.dart';
 import 'package:hokok/unit/color_manager.dart';
 import 'package:hokok/unit/font_manager.dart';
+import 'package:hokok/unit/routes_manager.dart';
+import 'package:hokok/unit/shared_widget/button.dart';
 import 'package:hokok/unit/strings_manager.dart';
 import 'package:hokok/unit/values_manager.dart';
 
@@ -46,7 +48,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
                 ),
                 child: _body(),
               ),
-              const BackButton(),
+              const DefaultBackButton(),
             ],
           ),
         ),
@@ -81,11 +83,15 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
           Row(
             children: [
               GestureDetector(
+                onTap: ()=>Navigator.of(context).pushReplacementNamed(Routes.profileRoute),
                 child: Padding(
                   padding: const EdgeInsets.all(AppPadding.p5),
                   child: SvgPicture.asset(
                     AssetsManager.attachedIcon,
-                    color: ColorManager.grey,
+                    colorFilter: const ColorFilter.mode(
+                      ColorManager.grey,
+                      BlendMode.srcIn,
+                    ),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -119,7 +125,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
                 child: Container(
                   padding: const EdgeInsets.all(AppPadding.p10),
                   margin: const EdgeInsets.all(AppMargin.m3),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: ColorManager.primary,
                     shape: BoxShape.circle,
                   ),
@@ -153,8 +159,8 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
                   topRight: Radius.circular(AppSize.s20),
                 ),
               ),
-              child: const TextWidget(
-                text: AppStrings.helpCenter,
+              child: const DefaultText(
+                AppStrings.helpCenter,
                 fontSize: FontSize.s11,
               ),
             ),
@@ -168,7 +174,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
             ),
             height: AppSize.s38,
             width: AppSize.s65,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: ColorManager.primary,
               shape: BoxShape.circle,
             ),
@@ -192,7 +198,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
             ),
             height: AppSize.s38,
             width: AppSize.s65,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: ColorManager.primary,
               shape: BoxShape.circle,
             ),
@@ -216,8 +222,8 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
                   topRight: Radius.circular(AppSize.s20),
                 ),
               ),
-              child: const TextWidget(
-                text: AppStrings.helpCenter,
+              child: const DefaultText(
+                AppStrings.helpCenter,
                 fontSize: FontSize.s11,
               ),
             ),

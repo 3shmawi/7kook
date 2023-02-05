@@ -42,7 +42,8 @@ class _MainScreenState extends State<MainScreen> {
             _space(AppSize.s35),
             _advertisementCard(),
             _space(AppSize.s143),
-            GestureDetector(
+            InkWell(
+              borderRadius: BorderRadius.circular(AppSize.s15),
               onTap: () =>
                   Navigator.of(context).pushNamed(Routes.talkWithUsRoute),
               child: const ChatButtonWidget(),
@@ -54,8 +55,8 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  TextWidget _header() => const TextWidget(
-        text: AppStrings.classification,
+  DefaultText _header() => const DefaultText(
+        AppStrings.classification,
         fontSize: FontSize.s25,
         fontWeight: FontWeightManager.w400,
       );

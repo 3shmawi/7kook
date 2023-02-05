@@ -6,9 +6,15 @@ class AppMargin {
   static const double m15 = 15.0;
   static const double m16 = 16.0;
   static const double m18 = 18.0;
+  static const double m19 = 19.0;
   static const double m20 = 20.0;
+  static const double m27 = 27.0;
+  static const double m30 = 30.0;
+  static const double m31 = 31.0;
   static const double m50 = 50.0;
   static const double m55 = 55.0;
+  static const double m59 = 59.0;
+  static const double m79 = 79.0;
 }
 
 class AppPadding {
@@ -31,8 +37,11 @@ class AppPadding {
   static const double p22 = 22.0;
   static const double p25 = 25.0;
   static const double p26 = 26.0;
+  static const double p31 = 31.0;
   static const double p37 = 37.0;
   static const double p55 = 55.0;
+  static const double p59 = 59.0;
+  static const double p69 = 69.0;
   static const double p105 = 105.0;
   static const double p128 = 128.0;
   static const double p177 = 177.0;
@@ -43,6 +52,7 @@ class AppSize {
   static const double s0_5 = 0.5;
   static const double s1 = 1.0;
   static const double s1_5 = 1.5;
+  static const double s2 = 2.0;
   static const double s3 = 3.0;
   static const double s4 = 4.0;
   static const double s7 = 7.0;
@@ -61,6 +71,7 @@ class AppSize {
   static const double s20_3 = 20.3;
   static const double s21_4 = 21.4;
   static const double s25 = 25.0;
+  static const double s27 = 27.0;
   static const double s30 = 30.0;
   static const double s31 = 31.0;
   static const double s34 = 34.0;
@@ -90,8 +101,11 @@ class AppSize {
   static const double s106 = 106.0;
   static const double s107 = 107.0;
   static const double s116 = 116.0;
+  static const double s117 = 117.0;
   static const double s120 = 120.0;
   static const double s124 = 124.0;
+  static const double s127 = 127.0;
+  static const double s133 = 133.0;
   static const double s140 = 140.0;
   static const double s142 = 142.0;
   static const double s143 = 143.0;
@@ -103,7 +117,9 @@ class AppSize {
   static const double s199 = 199.0;
   static const double s234 = 234.0;
   static const double s272 = 272.0;
+  static const double s303 = 303.0;
   static const double s312 = 312.0;
+  static const double s444 = 444.0;
   static const double s500 = 500.0;
 
 }
@@ -124,4 +140,5 @@ class AppOpacity {
   static const double c0_22 = 0.22;
   static const double c0_49 = 0.49;
   static const double c0_65 = 0.65;
+  static const double c0_70 = 0.70;
 }

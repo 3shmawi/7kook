@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../constant.dart';
 import '../font_manager.dart';
 
-class TextWidget extends StatelessWidget {
-  const TextWidget({
-    required this.text,
+class DefaultText extends StatelessWidget {
+  const DefaultText(
+      this.text,{
     this.fontSize,
     this.color,
     this.fontWeight,
@@ -22,11 +22,11 @@ class TextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: textAlign,
+      textAlign: textAlign ?? TextAlign.start,
       style: TextStyle(
         fontSize: fontSize ?? FontSize.s14,
         color: color ?? ConstantColor.secondaryColor,
-        fontWeight: fontWeight ?? FontWeightManager.normal,
+        fontWeight: fontWeight ?? FontWeightManager.w400,
         fontFamily: FontConstants.fontFamily,
       ),
     );

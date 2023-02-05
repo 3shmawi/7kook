@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hokok/unit/strings_manager.dart';
+import 'package:hokok/unit/values_manager.dart';
 
 import '../../../../unit/assets_manager.dart';
 import '../../../../unit/color_manager.dart';
@@ -19,8 +20,8 @@ class ChatButtonWidget extends StatelessWidget {
           width: double.infinity,
         ),
         Container(
-          height: 127,
-          width: 127,
+          height: AppSize.s127,
+          width: AppSize.s127,
           decoration: BoxDecoration(
             color: ColorManager.white,
             shape: BoxShape.circle,
@@ -31,26 +32,25 @@ class ChatButtonWidget extends StatelessWidget {
             ),
           ),
           child: const Center(
-            child: TextWidget(
-              fontSize: 32,
-              text: AppStrings.chatText,
+            child: DefaultText(
+              AppStrings.chatText,
+              fontSize: FontSize.s32,
               textAlign: TextAlign.center,
-              fontWeight: FontWeightManager.w400,
             ),
           ),
         ),
         Positioned(
-          height: 63,
-          width: 63,
-          right: 50,
-          bottom: 60,
+          height: AppSize.s63,
+          width: AppSize.s63,
+          right: AppSize.s50,
+          bottom: AppSize.s60,
           child: _iconCircle(AssetsManager.personIcon),
         ),
         Positioned(
-          height: 63,
-          width: 63,
-          left: 50,
-          bottom: 64,
+          height: AppSize.s63,
+          width: AppSize.s63,
+          left: AppSize.s50,
+          bottom: AppSize.s64,
           child: _iconCircle(AssetsManager.chatIcon),
         ),
       ],
@@ -58,22 +58,22 @@ class ChatButtonWidget extends StatelessWidget {
   }
 }
 
-
-Container _iconCircle(String icon)=>Container(
-
-  padding: const EdgeInsets.all(14.0),
-  decoration: BoxDecoration(
-    color: ColorManager.white,
-    shape: BoxShape.circle,
-    border: Border.all(
-      color: ColorManager.grey,
-      width: 1,
-      style: BorderStyle.solid,
-    ),
-  ),
-  child: SvgPicture.asset(
-    icon,
-    color: ColorManager.primary,
-    fit: BoxFit.cover,
-  ),
-);
+Container _iconCircle(String icon) => Container(
+      padding: const EdgeInsets.all(AppPadding.p14),
+      decoration: BoxDecoration(
+        color: ColorManager.white,
+        shape: BoxShape.circle,
+        border: Border.all(
+          color: ColorManager.grey,
+          width: 1,
+          style: BorderStyle.solid,
+        ),
+      ),
+      child: SvgPicture.asset(
+        icon,
+        colorFilter: const ColorFilter.mode(
+          ColorManager.primary,
+          BlendMode.srcIn,
+        ),
+      ),
+    );

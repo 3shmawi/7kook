@@ -1,5 +1,7 @@
 class AppStrings {
   static const noRouteFound = "لا يوجد مسار هنا";
+
+  static const testImage = "https://avatars.githubusercontent.com/u/100779215?s=400&u=bf334b1407e8fbf51a5cb21bd582bd38b7dd7c44&v=4";
 //welcome
   static const welcome = "مرحباً";
   static const welcomeName = "Ashmawi";
@@ -48,11 +50,12 @@ class AppStrings {
   static const contactMe = "تواصل معي";
   static const active = "نشط منذ نصف ساعة";
   static const name = "فيصل";
-  static const location = "الرياض - جدة -القسيم";
-  static const aboutMe = "نبذة عنى";
+  static const location = " الرياض - جدة -القسيم";
+  static const aboutMe = " نبذة عني";
   static const about = "اسمي فيصل القاسم العمر : 30 عام حاصل على ماجيستير في القانون من جامعة .... كذلك حاصل على دبلومة";
   static const more = "عرض المزيد عن فيصل";
-  static const statistics = "احصائيات";
+  static const less = "عرض أقل عن فيصل";
+  static const statistics = " احصائيات";
   static const rating = "التقييمات";
   static const agencies = "التوكيلات";
   static const tasks = "معدل اكمال المهام";

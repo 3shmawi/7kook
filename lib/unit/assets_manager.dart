@@ -28,4 +28,10 @@ class AssetsManager {
   static String personIcon = '$iconPath/person.svg';
   static String sendIcon = '$iconPath/send.svg';
   static String attachedIcon = '$iconPath/attached.svg';
+  static String checkIcon = '$iconPath/check.svg';
+  static String addIcon = '$iconPath/add.svg';
+  static String downIcon = '$iconPath/down.svg';
+  static String locationIcon = '$iconPath/location.svg';
+  static String penIcon = '$iconPath/pen.svg';
+  static String penal2Icon = '$iconPath/penal2.svg';
 }

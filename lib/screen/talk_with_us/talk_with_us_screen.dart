@@ -5,6 +5,7 @@ import 'package:hokok/unit/assets_manager.dart';
 import 'package:hokok/unit/color_manager.dart';
 import 'package:hokok/unit/font_manager.dart';
 import 'package:hokok/unit/routes_manager.dart';
+import 'package:hokok/unit/shared_widget/button.dart';
 import 'package:hokok/unit/strings_manager.dart';
 import 'package:hokok/unit/values_manager.dart';
 
@@ -48,7 +49,7 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
                 ),
                 child: _body(),
               ),
-              const BackButton(),
+              const DefaultBackButton(),
             ],
           ),
         ),
@@ -61,8 +62,8 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
           const SizedBox(
             height: AppSize.s20,
           ),
-          const TextWidget(
-            text: AppStrings.welcomeTab,
+          const DefaultText(
+            AppStrings.welcomeTab,
             fontSize: FontSize.s19,
           ),
           const SizedBox(
@@ -109,8 +110,8 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
           const SizedBox(
             height: AppSize.s20,
           ),
-          const TextWidget(
-            text: AppStrings.subjectsTab,
+          const DefaultText(
+            AppStrings.subjectsTab,
             fontSize: FontSize.s19,
           ),
           const SizedBox(
@@ -118,42 +119,34 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              SizedBox(
+            children: [
+              const SizedBox(
                 width: double.infinity,
               ),
-              TextWidget(
-                text: AppStrings.chooseBestTab,
-                fontSize: FontSize.s13,
+              _btnHeader(
+                AppStrings.chooseBestTab,
+                AppSize.s12,
+                onTap: () {},
               ),
-              SizedBox(
-                height: AppSize.s12,
+              _btnHeader(
+                AppStrings.contactWithTab,
+                AppSize.s9,
+                onTap: () {},
               ),
-              TextWidget(
-                text: AppStrings.contactWithTab,
-                fontSize: FontSize.s13,
+              _btnHeader(
+                AppStrings.searchAboutTab,
+                AppSize.s12,
+                onTap: () {},
               ),
-              SizedBox(
-                height: AppSize.s9,
-              ),
-              TextWidget(
-                text: AppStrings.searchAboutTab,
-                fontSize: FontSize.s13,
-              ),
-              SizedBox(
-                height: AppSize.s12,
-              ),
-              TextWidget(
-                text: AppStrings.addProposalTab,
-                fontSize: FontSize.s13,
+              _btnHeader(
+                AppStrings.addProposalTab,
+                AppSize.s20,
+                onTap: () {},
               ),
             ],
           ),
-          const SizedBox(
-            height: AppSize.s20,
-          ),
-          const TextWidget(
-            text: AppStrings.didFindTab,
+          const DefaultText(
+            AppStrings.didFindTab,
             fontSize: FontSize.s19,
           ),
           const SizedBox(
@@ -174,8 +167,8 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
             ),
             child: Column(
               children: [
-                const TextWidget(
-                  text: AppStrings.talkWithUsTab,
+                const DefaultText(
+                  AppStrings.talkWithUsTab,
                   fontSize: FontSize.s29,
                 ),
                 SvgPicture.asset(
@@ -193,8 +186,8 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
                   ),
                   onPressed: () =>
                       Navigator.of(context).pushNamed(Routes.chatRoute),
-                  child: TextWidget(
-                    text: AppStrings.startNowTab,
+                  child: const DefaultText(
+                    AppStrings.startNowTab,
                     color: ColorManager.white,
                   ),
                 ),
@@ -202,5 +195,19 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
             ),
           )
         ],
+      );
+
+  Padding _btnHeader(String txt, double space, {GestureTapCallback? onTap}) =>
+      Padding(
+        padding: EdgeInsets.only(bottom: space),
+        child: InkWell(
+          onTap: onTap,
+          borderRadius: BorderRadius.circular(AppSize.s15),
+          hoverColor: ColorManager.secondary,
+          child: DefaultText(
+            txt,
+            fontSize: FontSize.s13,
+          ),
+        ),
       );
 }
