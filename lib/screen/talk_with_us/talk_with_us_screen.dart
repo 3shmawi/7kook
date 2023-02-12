@@ -47,7 +47,7 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
                     color: ColorManager.secondary,
                   ),
                 ),
-                child: _body(),
+                child: _body(context),
               ),
               const DefaultBackButton(),
             ],
@@ -57,7 +57,7 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
     );
   }
 
-  Column _body() => Column(
+  Column _body(BuildContext context) => Column(
         children: [
           const SizedBox(
             height: AppSize.s20,
@@ -87,7 +87,7 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
                   ),
                   child: SvgPicture.asset(
                     AssetsManager.searchIcon,
-                    color: ColorManager.primary,
+                    colorFilter:const ColorFilter.mode(ColorManager.primary,BlendMode.srcIn,),
                   ),
                 ),
                 Expanded(
@@ -173,23 +173,18 @@ class _TalkWithUsScreenState extends State<TalkWithUsScreen> {
                 ),
                 SvgPicture.asset(
                   AssetsManager.chatIcon,
-                  color: ColorManager.secondary,
+                  colorFilter: const ColorFilter.mode(
+                    ColorManager.secondary,
+                    BlendMode.srcIn,
+                  ),
                   height: AppSize.s20,
                 ),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(AppSize.s72, AppSize.s25),
-                    backgroundColor: ColorManager.primary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(AppSize.s15),
-                    ),
-                  ),
+                DefaultElevatedButton(
+                  AppStrings.startNowTab,
                   onPressed: () =>
                       Navigator.of(context).pushNamed(Routes.chatRoute),
-                  child: const DefaultText(
-                    AppStrings.startNowTab,
-                    color: ColorManager.white,
-                  ),
+                  size: const Size(AppSize.s72, AppSize.s25),
+                  fontSize: FontSize.s14,
                 ),
               ],
             ),

@@ -46,7 +46,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
                     color: ColorManager.secondary,
                   ),
                 ),
-                child: _body(),
+                child: _body(context),
               ),
               const DefaultBackButton(),
             ],
@@ -56,7 +56,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
     );
   }
 
-  Widget _body() => Column(
+  Widget _body(BuildContext context ) => Column(
         children: [
           Expanded(
             child: SingleChildScrollView(
@@ -83,7 +83,7 @@ class _ChatHelperScreenState extends State<ChatHelperScreen> {
           Row(
             children: [
               GestureDetector(
-                onTap: ()=>Navigator.of(context).pushReplacementNamed(Routes.profileRoute),
+                onTap: ()=>Navigator.of(context).pushNamed(Routes.profileRoute),
                 child: Padding(
                   padding: const EdgeInsets.all(AppPadding.p5),
                   child: SvgPicture.asset(

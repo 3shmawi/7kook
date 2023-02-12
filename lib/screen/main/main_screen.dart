@@ -129,7 +129,7 @@ class _MainScreenState extends State<MainScreen> {
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   maxLines: AppIntegerNum.i2,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: ColorManager.white,
                       fontFamily: FontConstants.fontFamily),
                 ),
@@ -153,7 +153,10 @@ class _MainScreenState extends State<MainScreen> {
         child: SvgPicture.asset(
           AssetsManager.advertisementImage,
           fit: BoxFit.cover,
-          color: ColorManager.secondary,
+          colorFilter: const ColorFilter.mode(
+            ColorManager.secondary,
+            BlendMode.srcIn,
+          ),
         ),
       );
 }

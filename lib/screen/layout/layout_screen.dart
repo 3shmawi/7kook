@@ -56,7 +56,10 @@ class _LayoutScreenState extends State<LayoutScreen> {
                 height: AppSize.s142,
                 width: AppSize.s142,
                 fit: BoxFit.cover,
-                colorFilter:ColorFilter.mode(Colors.white.withOpacity(AppOpacity.c0_65),BlendMode.srcIn,),
+                colorFilter: ColorFilter.mode(
+                  Colors.white.withOpacity(AppOpacity.c0_65),
+                  BlendMode.srcIn,
+                ),
               ),
             ),
             Positioned(

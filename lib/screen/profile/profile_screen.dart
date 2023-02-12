@@ -3,12 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hokok/unit/assets_manager.dart';
 import 'package:hokok/unit/color_manager.dart';
 import 'package:hokok/unit/font_manager.dart';
+import 'package:hokok/unit/routes_manager.dart';
 import 'package:hokok/unit/shared_widget/text.dart';
 import 'package:hokok/unit/strings_manager.dart';
 import 'package:hokok/unit/values_manager.dart';
 
 import '../../unit/constants_manager.dart';
 import '../../unit/shared_widget/button.dart';
+import 'component/profile_details_widget.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -25,7 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _appBar(),
+          _appBar(context),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
@@ -249,14 +251,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Container _appBar() => Container(
+  Container _appBar(BuildContext context) => Container(
         width: double.infinity,
         height: AppSize.s234,
         color: ColorManager.primary,
         child: Row(
           children: [
-            _profile(),
-            _contacts(),
+            const ProfileDetailsWidget(),
+            _contacts(context),
           ],
         ),
       );
@@ -441,92 +443,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
       );
 
-  Expanded _profile() => Expanded(
-        child: Stack(
-          alignment: AlignmentDirectional.topStart,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: AppPadding.p55, right: AppPadding.p59),
-              child: Column(
-                children: [
-                  Container(
-                    height: AppSize.s105,
-                    width: AppSize.s116,
-                    padding: const EdgeInsets.all(AppPadding.p10),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: ColorManager.grey, width: 0.5),
-                      borderRadius: const BorderRadius.all(
-                        Radius.elliptical(
-                          AppSize.s116,
-                          AppSize.s107,
-                        ),
-                      ),
-                    ),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                          Radius.elliptical(
-                            AppSize.s116,
-                            AppSize.s107,
-                          ),
-                        ),
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: NetworkImage(
-                            AppStrings.testImage,
-                          ),
-                        ),
-                      ),
-                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: AppPadding.p2),
-                    child: DefaultText(
-                      AppStrings.name,
-                      fontSize: FontSize.s26,
-                      color: ColorManager.white,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(AssetsManager.locationIcon),
-                      const DefaultText(
-                        AppStrings.location,
-                        fontSize: FontSize.s10,
-                        color: ColorManager.secondary,
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-            Positioned(
-              top: AppSize.s79,
-              right: AppSize.s15,
-              height: AppSize.s9,
-              width: AppSize.s63,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: ColorManager.secondary,
-                  borderRadius: BorderRadius.circular(AppSize.s4),
-                ),
-                child: const DefaultText(
-                  AppStrings.active,
-                  fontSize: FontSize.s6,
-                  color: ColorManager.white,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-          ],
-        ),
-      );
-
-  Expanded _contacts() => Expanded(
+  Expanded _contacts(BuildContext context) => Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -535,7 +452,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               AppSize.s103,
               AssetsManager.addIcon,
               AppStrings.hire,
-              onTap: () {},
+              onTap: () =>Navigator.of(context).pushNamed(Routes.hiringRoute),
             ),
             _contactTab(
               AppMargin.m27,

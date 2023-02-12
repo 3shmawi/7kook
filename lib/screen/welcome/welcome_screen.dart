@@ -46,7 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: AppSize.s57),
+      const SizedBox(height: AppSize.s57),
             const Text(
               AppStrings.createdAccount,
               style: TextStyle(

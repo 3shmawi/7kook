@@ -34,4 +34,5 @@ class AssetsManager {
   static String locationIcon = '$iconPath/location.svg';
   static String penIcon = '$iconPath/pen.svg';
   static String penal2Icon = '$iconPath/penal2.svg';
+  static String cameraIcon = '$iconPath/camera.svg';
 }

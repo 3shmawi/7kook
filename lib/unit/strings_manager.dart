@@ -1,16 +1,18 @@
 class AppStrings {
   static const noRouteFound = "لا يوجد مسار هنا";
 
-  static const testImage = "https://avatars.githubusercontent.com/u/100779215?s=400&u=bf334b1407e8fbf51a5cb21bd582bd38b7dd7c44&v=4";
+  static const testImage =
+      "https://avatars.githubusercontent.com/u/100779215?s=400&u=bf334b1407e8fbf51a5cb21bd582bd38b7dd7c44&v=4";
+
 //welcome
   static const welcome = "مرحباً";
   static const welcomeName = "Ashmawi";
   static const createdAccount = "تم انشاء حسابك بنجاح";
   static const quotation = "\"";
   static const join = "سعداء بانضمامك إلينا:)";
-  static const message = "اذا واجهتك أي مشاكل لا تتردد في محادثتنا عبر الشات المخصص للشكاوى والملاحظات داخل التطبيق";
+  static const message =
+      "اذا واجهتك أي مشاكل لا تتردد في محادثتنا عبر الشات المخصص للشكاوى والملاحظات داخل التطبيق";
   static const loginNow = "تسجيل الدخول الآن";
-
 
   //main
   static const main = "الرئيسية";
@@ -52,7 +54,8 @@ class AppStrings {
   static const name = "فيصل";
   static const location = " الرياض - جدة -القسيم";
   static const aboutMe = " نبذة عني";
-  static const about = "اسمي فيصل القاسم العمر : 30 عام حاصل على ماجيستير في القانون من جامعة .... كذلك حاصل على دبلومة";
+  static const about =
+      "اسمي فيصل القاسم العمر : 30 عام حاصل على ماجيستير في القانون من جامعة .... كذلك حاصل على دبلومة";
   static const more = "عرض المزيد عن فيصل";
   static const less = "عرض أقل عن فيصل";
   static const statistics = " احصائيات";
@@ -63,12 +66,18 @@ class AppStrings {
   static const timing = "معدل الالتزام بالموعد";
   static const countTask = "المهام التي يعمل عليها";
   static const date = "تاريخ التسجيل";
-  static const badges ="أوسمة حصل عليها";
-  static const certificates ="شهاداتي";
+  static const badges = "أوسمة حصل عليها";
+  static const certificates = "شهاداتي";
   static const sendToMe = "أرسل تفاصيل ماتريد الى";
   static const details = "التصنيف";
   static const acceptTime = "المدة المتوقعة";
   static const budget = "الميزانية المطروحة";
   static const priceAfter = "بعد خصم النسبة";
   static const send = "ارسال";
+
+  //
+  static const notes = "ملاحظاتى وبلاغاتي";
+  static const profile = 'الملف الشخصي';
+  static const balance = 'رصيدي';
+  static const offers = 'عروضي وتوكيلاتى';
 }

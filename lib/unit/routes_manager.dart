@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hokok/screen/auth/create_client_account_screen.dart';
 import 'package:hokok/screen/auth/create_lawyer_account_screen.dart';
 import 'package:hokok/screen/auth/login_screen.dart';
+import 'package:hokok/screen/hire_lawyer/hire_lawyer_screen.dart';
 import 'package:hokok/screen/intro/on_boarding_screen.dart';
 import 'package:hokok/screen/intro/splash_screen.dart';
 import 'package:hokok/screen/layout/layout_screen.dart';
@@ -11,6 +12,7 @@ import 'package:hokok/unit/strings_manager.dart';
 
 import '../screen/auth/chose_account_screen.dart';
 import '../screen/chat/chat_helper_screen.dart';
+import '../screen/layout_profile/layout_profile_screen.dart';
 import '../screen/welcome/welcome_screen.dart';
 
 class Routes {
@@ -26,6 +28,8 @@ class Routes {
   static const String talkWithUsRoute = '/talkWithUs';
   static const String chatRoute = '/chat';
   static const String profileRoute = '/profile';
+  static const String hiringRoute = '/hire';
+  static const String layoutProfileRoute = '/layoutProfile';
 }
 
 class RouteGenerator {
@@ -55,6 +59,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const ChatHelperScreen());
       case Routes.profileRoute:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case Routes.hiringRoute:
+        return MaterialPageRoute(builder: (_) => const HireLawyerScreen());
+      case Routes.layoutProfileRoute:
+        return MaterialPageRoute(builder: (_) => const LayoutProfileScreen());
 
       default:
         return unDefinedRoute();
